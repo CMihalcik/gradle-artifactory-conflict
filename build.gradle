@@ -1,3 +1,15 @@
+apply plugin: 'com.jfrog.artifactory'
+
+buildscript {
+    configurations.classpath.resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    repositories {
+        jcenter()
+    }
+	dependencies {
+    	classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:3.0.3'
+	}
+}
+
 task hello << {
 	println "Hello from gradle"
 }
